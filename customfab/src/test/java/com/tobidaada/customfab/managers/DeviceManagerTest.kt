@@ -70,16 +70,13 @@ class DeviceManagerTest {
 
     @Test
     fun getCurrentTimeFlow_emitsDateStringInProperFormat() = runTest {
-        launch {
-            val dateString = deviceManager.getCurrentTime().first()
+        val dateString = deviceManager.getCurrentTime().first()
 
-            println(dateString)
+        println(dateString)
 
-            val regexPattern = "\\d{2}:\\d{2}:\\d{2}\\s\\d{2}\\s[A-Z][a-z]+\\s\\d{4}"
-            val re = Regex(regexPattern)
+        val regexPattern = "\\d{2}:\\d{2}:\\d{2}\\s\\d{2}\\s[A-Z][a-z]+\\s\\d{4}"
+        val re = Regex(regexPattern)
 
-            assertThat(dateString.matches(re)).isTrue()
-        }
-
+        assertThat(dateString.matches(re)).isTrue()
     }
 }
