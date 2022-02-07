@@ -5,7 +5,7 @@
 - Java 11 (to run tests from command line)
 
 ## Getting Started
-Clone the repo with `git clone`
+Clone the repo with `git clone git@github.com:TobiAlbert/MyFloatingActionButton.git`
 
 ### Configuration
 Use Android studio to manually import the `customfab` android library module as a dependency in your `build.gradle` file.
