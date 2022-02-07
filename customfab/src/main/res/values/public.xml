@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Making this string public makes other value resources private by default-->
+    <public name="customfab_project_name" type="string"/>
+</resources>

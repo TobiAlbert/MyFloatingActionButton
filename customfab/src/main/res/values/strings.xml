@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="customfab_project_name">MyFloatingActionButton</string>
+    <string name="dialog_image_content_description">power to the people</string>
+    <string name="sample_installation_text">Library installed on 05 Mar 2021</string>
+</resources>
