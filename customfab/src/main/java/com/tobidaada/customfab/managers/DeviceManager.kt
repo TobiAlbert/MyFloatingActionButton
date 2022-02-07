@@ -1,5 +1,9 @@
 package com.tobidaada.customfab.managers
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -9,11 +13,15 @@ class DeviceManager(private val sharedPreferenceManager: ISharedPreferenceManage
         private const val INSTALLATION_DATE_KEY = "installation_time_key"
     }
 
-    // get the current time (figure out how to convert this to a flow/observable)
-    fun getCurrentTime(): String =
-        convertDateToString(Date(), DateFormat.HH_MM_SS_DD_MMM_YYYY)
+    fun getCurrentTime(): Flow<String> = flow {
+        while (true) {
+            val dateString = convertDateToString(Date(), DateFormat.HH_MM_SS_DD_MMM_YYYY)
+            emit(dateString)
 
-    // get the installation time
+            kotlinx.coroutines.delay(1_000)
+        }
+    }.flowOn(Dispatchers.Main)
+
     fun getAppInstallationDate(): String {
         val dateString = sharedPreferenceManager.getString(INSTALLATION_DATE_KEY)
 
@@ -26,7 +34,6 @@ class DeviceManager(private val sharedPreferenceManager: ISharedPreferenceManage
         return dateString
     }
 
-    // save the installation time
     fun saveAppInstallationDate(date: Date) {
         val dateString = convertDateToString(date, DateFormat.DD_MMM_YYYY)
         sharedPreferenceManager.saveString(INSTALLATION_DATE_KEY, dateString)
