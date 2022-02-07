@@ -21,6 +21,7 @@ class CustomDialogFragment: AppCompatDialogFragment() {
     }
 
     companion object {
+        const val TAG: String = "CustomDialogFragmentTag"
         fun newInstance(): CustomDialogFragment {
             val fragment = CustomDialogFragment()
             val bundle = Bundle()
