@@ -17,7 +17,7 @@ class SharedPreferenceManagerImpl(private val context: Context): ISharedPreferen
     }
 
     override fun saveString(key: String, value: String) {
-        sharedPrefsEditor.putString(key, value).apply()
+        sharedPrefsEditor.putString(key, value).commit()
     }
 
     override fun getString(key: String, default: String): String =
