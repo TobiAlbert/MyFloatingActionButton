@@ -1,9 +1,9 @@
 package com.tobidaada.customfab.di
 
 import android.content.Context
-import com.tobidaada.customfab.DeviceManager
-import com.tobidaada.customfab.ISharedPreferenceManager
-import com.tobidaada.customfab.SharedPreferenceManagerImpl
+import com.tobidaada.customfab.managers.DeviceManager
+import com.tobidaada.customfab.managers.ISharedPreferenceManager
+import com.tobidaada.customfab.managers.SharedPreferenceManagerImpl
 
 object Injector {
 

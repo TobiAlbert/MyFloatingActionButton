@@ -1,4 +1,4 @@
-package com.tobidaada.customfab
+package com.tobidaada.customfab.managers
 
 import java.text.SimpleDateFormat
 import java.util.*

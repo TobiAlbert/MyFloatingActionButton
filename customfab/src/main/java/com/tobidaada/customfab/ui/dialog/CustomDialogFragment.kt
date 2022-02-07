@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDialogFragment
-import com.tobidaada.customfab.DeviceManager
+import com.tobidaada.customfab.managers.DeviceManager
 import com.tobidaada.customfab.R
 import com.tobidaada.customfab.di.Injector
 

@@ -1,4 +1,4 @@
-package com.tobidaada.customfab
+package com.tobidaada.customfab.managers
 
 import android.content.Context
 import android.content.SharedPreferences
