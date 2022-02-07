@@ -20,23 +20,25 @@
         android:contentDescription="@string/dialog_image_content_description" />
 
     <TextView
+        android:id="@+id/customfab__currentTimeTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        tools:text="Current time:\n 17:04:04 06 Mar 2021"
+        android:paddingBottom="@dimen/dialog_horizontal_margin"
+        tools:text="@string/sample_current_time_text"
         style="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/customfab__installationDateTv" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/customfab__installationDateTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        tools:text="@string/sample_installation_text"
+        tools:text="@string/sample_installation_time_text"
         style="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.498"

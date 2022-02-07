@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.tobidaada.customfab.di.Injector
 import com.tobidaada.customfab.ui.dialog.CustomDialogFragment
+import java.util.*
 
 class CustomFab @JvmOverloads constructor(
     context: Context,
@@ -18,6 +20,16 @@ class CustomFab @JvmOverloads constructor(
 ): FloatingActionButton(context, attrs) {
 
     init {
+
+        // initialize project dependencies
+        Injector.init(context)
+
+        val deviceManager = Injector.deviceManager
+
+        if (deviceManager.getAppInstallationDate().isEmpty()) {
+            deviceManager.saveAppInstallationDate(Date())
+        }
+
         // code to work on positioning of the fab
 
         setOnClickListener {}

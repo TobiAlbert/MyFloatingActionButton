@@ -2,5 +2,8 @@
 <resources>
     <string name="customfab_project_name">MyFloatingActionButton</string>
     <string name="dialog_image_content_description">power to the people</string>
-    <string name="sample_installation_text">Library installed on 05 Mar 2021</string>
+    <string name="sample_installation_time_text">Library installed on 05 Mar 2021</string>
+    <string name="sample_current_time_text">Current time:\n 17:04:04 06 Mar 2021</string>
+    <string name="library_installation_time_text">Library installed on %s</string>
+    <string name="current_time_text">Current time:\n%s</string>
 </resources>
