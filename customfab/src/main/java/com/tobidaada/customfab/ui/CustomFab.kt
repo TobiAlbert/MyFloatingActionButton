@@ -3,11 +3,12 @@ package com.tobidaada.customfab.ui
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
+import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.tobidaada.customfab.R
 import com.tobidaada.customfab.di.Injector
 import com.tobidaada.customfab.ui.dialog.CustomDialogFragment
 import java.util.*
@@ -15,9 +16,8 @@ import java.util.*
 class CustomFab @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyle: Int = 0,
-    defRes: Int = 0
-): FloatingActionButton(context, attrs) {
+    defStyle: Int = com.google.android.material.R.attr.floatingActionButtonStyle,
+): FloatingActionButton(context, attrs, defStyle) {
 
     init {
 
@@ -29,6 +29,12 @@ class CustomFab @JvmOverloads constructor(
         if (deviceManager.getAppInstallationDate().isEmpty()) {
             deviceManager.saveAppInstallationDate(Date())
         }
+
+        // set icon drawable resource
+        setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_calendar))
+
+        val tint = ContextCompat.getColor(context, R.color.fab_image_tint)
+        drawable.setTint(tint)
 
         // code to work on positioning of the fab
 

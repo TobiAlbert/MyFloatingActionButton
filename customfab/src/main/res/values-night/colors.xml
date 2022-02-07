@@ -2,4 +2,5 @@
 <resources>
     <color name="dialog_background_color">#555555</color>
     <color name="dialog_image_tint">#FFFFFF</color>
+    <color name="fab_image_tint">#000000</color>
 </resources>
