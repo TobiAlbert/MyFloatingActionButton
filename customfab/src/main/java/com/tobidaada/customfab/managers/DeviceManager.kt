@@ -22,17 +22,7 @@ class DeviceManager(private val sharedPreferenceManager: ISharedPreferenceManage
         }
     }.flowOn(Dispatchers.Main)
 
-    fun getAppInstallationDate(): String {
-        val dateString = sharedPreferenceManager.getString(INSTALLATION_DATE_KEY)
-
-        val date = Date()
-        if (dateString.isEmpty()) {
-            saveAppInstallationDate(date)
-            return convertDateToString(date, DateFormat.DD_MMM_YYYY)
-        }
-
-        return dateString
-    }
+    fun getAppInstallationDate(): String = sharedPreferenceManager.getString(INSTALLATION_DATE_KEY)
 
     fun saveAppInstallationDate(date: Date) {
         val dateString = convertDateToString(date, DateFormat.DD_MMM_YYYY)
