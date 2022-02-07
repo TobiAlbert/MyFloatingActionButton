@@ -1,13 +1,18 @@
 package com.tobidaada.customfab.ui.dialog
 
 import android.content.res.Resources
+import android.graphics.Color
 import android.graphics.Rect
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDialogFragment
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -38,6 +43,12 @@ class CustomDialogFragment : AppCompatDialogFragment() {
 
         displayCurrentTime(view)
 
+        dialog?.window?.let {
+            it.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            it.requestFeature(Window.FEATURE_NO_TITLE)
+            Unit
+        }
+
         return view
     }
 
@@ -58,7 +69,7 @@ class CustomDialogFragment : AppCompatDialogFragment() {
         }
     }
 
-    fun AppCompatDialogFragment.setWidthPercent(percentage: Int) {
+    private fun AppCompatDialogFragment.setWidthPercent(percentage: Int) {
         val percent = percentage.toFloat() / 100
         val dm = Resources.getSystem().displayMetrics
         val rect = dm.run { Rect(0, 0, widthPixels, heightPixels) }
